@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Course Notes for Social Networking</title>
+  <meta name="description" content="Lecture notes for SOC 3412.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Course Notes for Social Networking" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lecture notes for SOC 3412." />
+  <meta name="github-repo" content="SSDALab/NetworksBook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Course Notes for Social Networking" />
+  
+  <meta name="twitter:description" content="Lecture notes for SOC 3412." />
+  
+
+<meta name="author" content="Zack W. Almquist">
+
+
+<meta name="date" content="2017-12-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="IntroNetworks.html">
+<link rel="next" href="networkvizualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes for Social Networking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#statnet-and-igraph"><i class="fa fa-check"></i><b>1.2</b> STATNET and igraph</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#networkdata-and-devtools"><i class="fa fa-check"></i><b>1.3</b> networkdata and devtools</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="IntroNetworks.html"><a href="IntroNetworks.html"><i class="fa fa-check"></i><b>2</b> Networks and Network Thinking</a><ul>
+<li class="chapter" data-level="2.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="IntroNetworks.html"><a href="IntroNetworks.html#introduction-to-network-concepts"><i class="fa fa-check"></i><b>2.2</b> Introduction to Network Concepts</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#set-theoretic-notation-versus-matrix-notation"><i class="fa fa-check"></i><b>2.2.1</b> Set theoretic notation versus Matrix Notation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="IntroNetworks.html"><a href="IntroNetworks.html#relational-data"><i class="fa fa-check"></i><b>2.3</b> Relational Data</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#some-types-of-relationships"><i class="fa fa-check"></i><b>2.3.1</b> Some Types of Relationships</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="statnet-overview.html"><a href="statnet-overview.html"><i class="fa fa-check"></i><b>3</b> STATNET Overview</a></li>
+<li class="chapter" data-level="4" data-path="networkvizualization.html"><a href="networkvizualization.html"><i class="fa fa-check"></i><b>4</b> Network Vizualization</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes for Social Networking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statnet-overview" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> STATNET Overview</h1>
+<p>Using the <em>network</em> package to handle <strong>Network objects</strong>.</p>
+<p>Basics in getting and loading a network example data-set:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(network)       <span class="co"># Make sure that network is loaded</span>
+<span class="co"># help(&quot;network-package&quot;) to get started.</span>
+<span class="kw">data</span>(<span class="dt">package=</span><span class="st">&quot;network&quot;</span>) <span class="co"># List available datasets in network</span>
+
+<span class="kw">data</span>(flo)      <span class="co"># Load a built-in data set; see ?flo for more</span>
+flo          <span class="co"># Examine the flo adjacency matrix</span></code></pre></div>
+
+<div class="example">
+<span id="exm:unnamed-chunk-23" class="example"><strong>Example 3.1  </strong></span>Common network file types are that of the tables (.txt or .csv), Pajek network format (<a href="http://vlado.fmf.uni-lj.si/pub/networks/pajek/" class="uri">http://vlado.fmf.uni-lj.si/pub/networks/pajek/</a>, UCINET, etc.
+</div>
+<p></p>
+<p>First find the files “flo.paj” and “floadj.txt” that come within the network package:</p>
+<p>First we will attempt to bring in a .txt file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> flo.paj.location &lt;-<span class="st">&quot;http://vlado.fmf.uni-lj.si/pub/networks/data/GD/gd98/A98.net&quot;</span></code></pre></div>
+<p>Try reading in a Pajek file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">flopaj &lt;-<span class="st"> </span><span class="kw">read.paj</span>(flo.paj.location)</code></pre></div>
+<p>Write to table</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.table</span>(flopaj[,],<span class="dt">file=</span><span class="st">&quot;data/floadj.txt&quot;</span>)
+floadj.txt.location &lt;-<span class="st">&quot;data/floadj.txt&quot;</span></code></pre></div>
+<p>Then read them into adjacency matrix form:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> floadj &lt;-<span class="st"> </span><span class="kw">read.table</span>(floadj.txt.location,<span class="dt">header=</span><span class="ot">TRUE</span>)
+ floadj  </code></pre></div>
+<p>Some other common commands and calls for network class types:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(flopaj)    <span class="co"># This is a project file, with networks and other data</span>
+<span class="kw">names</span>(flopaj$networks)  <span class="co"># See which networks are in the file</span>
+
+nflo2 &lt;-<span class="st"> </span>flopaj$networks[[<span class="dv">1</span>]]   <span class="co"># Extract the marriage data</span>
+nflo2       <span class="co"># Examine the network object</span></code></pre></div>
+<p>Load “native” R data file( note, may need to change directory).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;data/nmlec1.Rdata&quot;</span>)         <span class="co"># Load example data</span>
+mids_1993            <span class="co"># Examine one of the imported objects</span></code></pre></div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 3.2  </strong></span> Other useful R commands in the network package. As always one can delve deeper into these functions via R’s help manuals (either <em>?</em> or <em>help()</em> ).</p>
+One of the first things we should look at is network objects, here is a quick example of how to create a network object and pull out some basic network properties.
+</div>
+<p></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(flo)
+nflo &lt;-<span class="st"> </span><span class="kw">network</span>(flo, <span class="dt">directed=</span><span class="ot">FALSE</span>)     
+nflo   <span class="co"># Get a quick description of the data</span>
+<span class="kw">summary</span>(nflo)   <span class="co"># Get an overall summary</span>
+<span class="kw">print</span>(nflo)    <span class="co"># Simple print method</span>
+<span class="kw">network.dyadcount</span>(nflo)   <span class="co"># How many dyads in nflo?</span>
+<span class="kw">network.edgecount</span>(nflo)     <span class="co"># How many edges are present?</span>
+<span class="kw">network.size</span>(nflo)   <span class="co"># How large is the network?</span>
+<span class="kw">as.sociomatrix</span>(nflo)   <span class="co"># Show it as a sociomatrix</span>
+nflo[,]   <span class="co"># Another way to do it</span></code></pre></div>
+<p>An example plot generated by the <em>plot.network()</em> command. The plot on the left is the default Fruchterman and Reingold’s force-directed placement algorithm, where the plot on the right is a circle output. More layouts and information can be found with <em>gplot</em> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+ <span class="kw">plot</span>(nflo,<span class="dt">displaylabels=</span>T,<span class="dt">boxed.labels=</span>F) 
+ <span class="kw">plot</span>(nflo,<span class="dt">displaylabels=</span>T,<span class="dt">mode=</span><span class="st">&quot;circle&quot;</span>, <span class="dt">boxed.labels=</span>F) </code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>``` Generating an empty network can be useful for a number of things. %add things</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="co"># Create an empty graph with 5 vertices</span>
+nempty &lt;-<span class="st"> </span><span class="kw">network.initialize</span>(<span class="dv">5</span>) 
+nempty   <span class="co"># Compare with nflo  </span></code></pre></div>
+<p>Now, we can look at some basic network properties such as edges.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw">network.initialize</span>(<span class="dv">5</span>)  <span class="co"># Create an empty graph</span>
+ g[<span class="dv">1</span>,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># Add an edge from 1 to 2</span>
+ g[<span class="dv">2</span>,] &lt;-<span class="st"> </span><span class="dv">1</span>   <span class="co"># Add edges from 2 to everyone else</span>
+ m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow=</span><span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">5</span>)   
+ m[<span class="dv">3</span>,<span class="dv">4</span>:<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># Add entries from 3 to 4 and 5</span>
+ g[m&gt;<span class="dv">0</span>] &lt;-<span class="st"> </span><span class="dv">1</span>  <span class="co"># Add more entries</span>
+ g[,]</code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="IntroNetworks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="networkvizualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Networks.Rmd",
+"text": "Edit"
+},
+"download": ["IntroToNetworks.pdf", "IntroToNetworks.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

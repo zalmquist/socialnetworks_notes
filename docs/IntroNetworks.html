@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Course Notes for Social Networking</title>
+  <meta name="description" content="Lecture notes for SOC 3412.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Course Notes for Social Networking" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lecture notes for SOC 3412." />
+  <meta name="github-repo" content="SSDALab/NetworksBook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Course Notes for Social Networking" />
+  
+  <meta name="twitter:description" content="Lecture notes for SOC 3412." />
+  
+
+<meta name="author" content="Zack W. Almquist">
+
+
+<meta name="date" content="2017-12-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="networkvizualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Course Notes for Social Networking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#statnet-and-igraph"><i class="fa fa-check"></i><b>1.2</b> STATNET and igraph</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#networkdata-and-devtools"><i class="fa fa-check"></i><b>1.3</b> networkdata and devtools</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="IntroNetworks.html"><a href="IntroNetworks.html"><i class="fa fa-check"></i><b>2</b> Networks and Network Thinking</a><ul>
+<li class="chapter" data-level="2.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="IntroNetworks.html"><a href="IntroNetworks.html#introduction-to-network-concepts"><i class="fa fa-check"></i><b>2.2</b> Introduction to Network Concepts</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#set-theoretic-notation-versus-matrix-notation"><i class="fa fa-check"></i><b>2.2.1</b> Set theoretic notation versus Matrix Notation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="IntroNetworks.html"><a href="IntroNetworks.html#relational-data"><i class="fa fa-check"></i><b>2.3</b> Relational Data</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="IntroNetworks.html"><a href="IntroNetworks.html#some-types-of-relationships"><i class="fa fa-check"></i><b>2.3.1</b> Some Types of Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="IntroNetworks.html"><a href="IntroNetworks.html#statnet-overview"><i class="fa fa-check"></i><b>2.4</b> STATNET Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="networkvizualization.html"><a href="networkvizualization.html"><i class="fa fa-check"></i><b>3</b> Network Vizualization</a></li>
+<li class="chapter" data-level="4" data-path="network-data-and-measurement.html"><a href="network-data-and-measurement.html"><i class="fa fa-check"></i><b>4</b> Network Data and Measurement</a><ul>
+<li class="chapter" data-level="4.1" data-path="network-data-and-measurement.html"><a href="network-data-and-measurement.html#types-of-network-data"><i class="fa fa-check"></i><b>4.1</b> Types of network data</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="network-data-and-measurement.html"><a href="network-data-and-measurement.html#one-mode-data"><i class="fa fa-check"></i><b>4.1.1</b> One mode data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="network-data-and-measurement.html"><a href="network-data-and-measurement.html#two-mode-data"><i class="fa fa-check"></i><b>4.1.2</b> Two mode data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="network-descriptive-statistics.html"><a href="network-descriptive-statistics.html"><i class="fa fa-check"></i><b>5</b> Network Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Notes for Social Networking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="IntroNetworks" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Networks and Network Thinking</h1>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">2.1</span> Overview</h2>
+<p>Network science and social network analysis provide both a theoretical and methodological foundation for understanding our social world. <span class="citation">Butts (<a href="#ref-butts08">2008</a>)</span> explains the social network field as follows:</p>
+<blockquote>
+<p>The social network field is an interdisciplinary research program which seeks to predict the structure of relation- ships among social entities, as well as the impact of said structure on other social phenomena. The substantive elements of this program are built around a shared chore of concepts and methods for the measurement, representation, and analysis of social structure. These techniques (jointly referred to as the methods of social network analysis) are applicable to a wide range of substantive domains, ranging from the analysis of concepts within mental models (<span class="citation">Wegner (<a href="#ref-wegner95">1995</a>)</span>,<span class="citation">Carley (<a href="#ref-carley97">1997</a>)</span>) to the study of war between nations (<span class="citation">Wimmer and Min (<a href="#ref-wimmer06">2006</a>)</span>)</p>
+</blockquote>
+</div>
+<div id="introduction-to-network-concepts" class="section level2">
+<h2><span class="header-section-number">2.2</span> Introduction to Network Concepts</h2>
+<p>To begin our journey into the nature of social networks, we first must define what a <strong>relationship</strong> entails.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-7" class="definition"><strong>Definition 2.1  </strong></span><em>Relationship</em>: an irreducible property of two or more entities (compare with properties of entities alone or so called “attributes”).
+</div>
+<p></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Example 2.1  </strong></span>An example of a relationship is students alma matters. I.e. Bill graduated from the University of California, Irvine and Jane graduated from University of California, Irvine so they have a this “alma matter” relationship; however, Bob graduated from University of Michigan so he is not have this “alma matter” relationship with Bill and Jane.</p>
+Other examples of relationships can be communication, acquaintanceship, sexual contact, proximity, migration rate, alliance/conflict, etc.
+</div>
+<p></p>
+<p><em>Focus</em>: the properties and consequences of relations (rather than individual properties) * Entities can be persons, non-human animals, groups, locations, organizations, regions, etc. * Relationships can be communication, acquaintanceship, sexual contact, proximity, migration rates, alliance/conflict, etc. * Social network analysis: the study of relational data arising from social systems</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 2.2  </strong></span><strong>Social network analysis</strong>: the study of relational data arising from social systems (e.g., schools, prisons, countries,…).
+</div>
+<p></p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-10" class="definition"><strong>Definition 2.3  </strong></span><strong>Network</strong>: a collection of entities (commonly called nodes or vertices), together with a set of relations on those entities (often called edges or ties).</p>
+<ol style="list-style-type: decimal">
+<li>Entities: nodes, or vertices</li>
+<li>Relations: edges, or ties (sometimes authors will distinguish between tie and edge, however this is somewhat uncommon)</li>
+</ol>
+<ul>
+<li>Focus on dyadic relations</li>
+<li>Directed vs. undirected</li>
+<li>May be signed or valued
+</div>
+</li>
+</ul>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-11" class="definition"><strong>Definition 2.4  </strong></span><strong>Graph</strong>: a set of vertices (<span class="math inline">\(V\)</span>) together with a set of edges (<span class="math inline">\(E\)</span>) – mathematical representation of social structure. Typically a graph, <span class="math inline">\(G\)</span>, is define as the set, <span class="math inline">\(G=(V,E)\)</span></p>
+Below is R code for generating a dyad and ploting it. The vertex set coorisponds to the number of rows/columns and the edges (relationships) to the cells in the matrix. More on this in the next section.
+</div>
+<p></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sna)
+g&lt;-<span class="kw">matrix</span>(<span class="dv">1</span>,<span class="dt">nc=</span><span class="dv">2</span>,<span class="dt">nr=</span><span class="dv">2</span>)
+<span class="kw">gplot</span>(g)</code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div id="set-theoretic-notation-versus-matrix-notation" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Set theoretic notation versus Matrix Notation</h3>
+<p>A nework is often represented as a mathematical graph (<span class="math inline">\(G\)</span>), such that <span class="math inline">\(V= \{v_1,\dots,v_n\}\)</span> and <span class="math inline">\(E\)</span> is the set of <span class="math inline">\(i,j\)</span> vertices that have a relation. <span class="math inline">\(i,j\)</span> can be ordered <span class="math inline">\((i,j)\)</span> or unordered <span class="math inline">\(\{i,j\}\)</span>. Ordered ties represent directed relations (e.g., sending a package) and unordered represent a recipricol relation (e.g., a facebook friendship). Alternatively, graphs can be represented simply as a square <strong>matrix</strong> of binary values (i.e., does a relation exist between <span class="math inline">\(i,j\)</span> vertices?). This matrix is known as an adjacency matrix (<span class="math inline">\(A\)</span>). An adjancy matrix is binary in the cells (i.e., 1 or 0), typically we exclude self ties (i.e., <span class="math inline">\(i,i\)</span> cells are 0) and is always square. If it is not symmetic then it is a <em>directed</em> graph, and if it is symmetric it is known as <em>undirected</em> graph.</p>
+<p>Let’s visualize an adjancy matrix in R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g&lt;-<span class="kw">rgraph</span>(<span class="dv">10</span>)
+g</code></pre></div>
+</div>
+</div>
+<div id="relational-data" class="section level2">
+<h2><span class="header-section-number">2.3</span> Relational Data</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-14" class="definition"><strong>Definition 2.5  </strong></span><strong>Relational</strong> (network) data} concerns connections among entities, rather than attributes of entities * Entities can be persons, organizations, concepts, etc. * Relations can be interaction, proximity, membership, etc. * Two common forms of data are  data (adjacency matrices) and <em>two-mode</em> data (incidence matrices)
+</div>
+<p></p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-15" class="definition"><strong>Definition 2.6  </strong></span><em>One Mode data</em> – Networks with one vertex class (ie organizations, individuals, concepts, etc.)</p>
+Represented by adjacency matrices. Vertices on rows and columns, <span class="math inline">\(A_{ij}=1\)</span> if i sends a tie to j, else <span class="math inline">\(A_{ij}=0\)</span>. Can contain edge values, where applicable (<span class="math inline">\(A_{ij}\)</span> is value of i,j edge). Symmetric in undirected case, diagonals represent self-ties, often treated as undefined.
+</div>
+<p></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-16" class="example"><strong>Example 2.2  </strong></span>The first example is a communication Emergent A communication network of the Emergent Multi-Organizational Network (EMON) of Mt Si SAR, data contained within the network package.
+</div>
+<p></p>
+<p>R code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(network)
+<span class="kw">data</span>(emon)
+<span class="co">#help(emon)</span>
+ n &lt;-<span class="st"> </span><span class="kw">ncol</span>(<span class="kw">as.sociomatrix</span>(emon[[<span class="dv">4</span>]]))
+ colorn &lt;-<span class="st"> </span><span class="kw">rainbow</span>(n, <span class="dt">start=</span>.<span class="dv">7</span>, <span class="dt">end=</span>.<span class="dv">1</span>)
+ vname &lt;-<span class="st"> </span><span class="kw">get.vertex.attribute</span>(emon[[<span class="dv">4</span>]],<span class="dt">attrname=</span><span class="st">&quot;vertex.names&quot;</span>)
+ <span class="kw">plot.network</span>(emon[[<span class="dv">4</span>]], <span class="dt">usearrows=</span><span class="ot">FALSE</span>, <span class="dt">displayisolates=</span><span class="ot">FALSE</span>,<span class="dt">vertex.col=</span>colorn,<span class="dt">main=</span><span class="st">&quot;Mt. Si SAR EMON&quot;</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>,<span class="dt">legend=</span>vname, <span class="dt">col=</span>colorn, <span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>,<span class="dt">cex=</span>.<span class="dv">5</span>)</code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Edge list a,b; c,d; e,f; etc incident matrices</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-18" class="example"><strong>Example 2.3  </strong></span>Special Case: Ego Nets– Egocentric network: focal actor (“ego”) and neighbors (“alters”) and ties among alters. What does it tell us: number of ties ego has (neighborhood size), Triangles (3-cliques) containing ego, connections among alters, neighborhood composition (if asked) %find an example graph it and put it here
+</div>
+<p></p>
+<div id="some-types-of-relationships" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Some Types of Relationships</h3>
+<ul>
+<li>Conceptual: shared or antithetic properties
+<ul>
+<li>similarity/difference in individual attributes, correlation among variables, inclusion/exclusion, surface matching on proteins</li>
+</ul></li>
+<li>Co-catagorical: shared membership
+<ul>
+<li>organizational co-membership, event co-participation, co-occurrence of words within texts</li>
+</ul></li>
+<li>Nominational: resulting from the behavior of ego +attributions of friendship/enmity, kinship (fictive or otherwise), causal narratives</li>
+</ul>
+
+<div class="example">
+<span id="exm:unnamed-chunk-19" class="example"><strong>Example 2.4  </strong></span> * Macro-level networks +include: militarized interstate disputes, migration networks (e.g. county-couty migration in the US), interorganizational relations (e.g. SAR EMONs)
+</div>
+<p></p>
+<p>R code</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;data/cow_adjmats.Rdata&quot;</span>)
+mid.network&lt;-<span class="kw">as.network</span>(mid[[<span class="dv">1</span>]])
+<span class="kw">plot.network</span>(mid.network,<span class="dt">displayisolates=</span><span class="ot">FALSE</span>, <span class="dt">label=</span>cow.system$State.Abb[(cow.system$Year==<span class="dv">1993</span>)], <span class="dt">boxed.labels=</span><span class="ot">FALSE</span>, <span class="dt">label.cex=</span>.<span class="dv">5</span>, <span class="dt">main=</span><span class="st">&quot;COW Militarized interstate disputes 1993&quot;</span>)</code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>R code</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(emon)
+imar&lt;-<span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) +<span class="st"> </span><span class="fl">0.1</span>
+nmar&lt;-.<span class="dv">75</span>*imar
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>), <span class="dt">mar=</span>nmar)
+for(i in <span class="dv">1</span>:<span class="dv">7</span>){
+  <span class="kw">plot.network</span>(emon[[i]], <span class="dt">usearrows=</span><span class="ot">FALSE</span>, <span class="dt">vertex.cex=</span><span class="fl">1.5</span>)
+     <span class="kw">mtext</span>(<span class="kw">names</span>(emon)[i],<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">edge.col=</span><span class="st">&quot;grey&quot;</span>)
+    }</code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<ul>
+<li>Interpersonal networks
+<ul>
+<li>Communication - e.g. WTC responder radio communications (aggregate and dynamic</li>
+<li>Friendship - e.g. perceived and estimated friendships among managers</li>
+<li>Interaction in task performance- e.g. WTC police reports</li>
+<li>Co-Participation- e.g. research group co-participation in a large research project</li>
+</ul></li>
+<li>Citation networks
+<ul>
+<li>Authorship- e.g. authorship of articles in a large research project</li>
+<li>hyperreferences- e.g. citations among weblogs</li>
+<li>Functional Citations- e.g. function calls in the linux kernel</li>
+</ul></li>
+<li>Conceptual networks
+<ul>
+<li>Interval graphs- e.g. life history graphs</li>
+<li>Mental models- e.g. student concept maps for ``information systemÓ</li>
+<li>Entailment structures- e.g. latent structure in US religious belief; dependencies within the Bank Wiring Room</li>
+</ul></li>
+</ul>
+<p>A special case of a node not attached to any other vertex is known as an <strong>isolate</strong> and will be carefully definee as a component of size 1. We will discuss this more in the future.</p>
+</div>
+</div>
+<div id="statnet-overview" class="section level2">
+<h2><span class="header-section-number">2.4</span> STATNET Overview</h2>
+<p>Using the <em>network</em> package to handle <strong>Network objects</strong>.</p>
+<p>Basics in getting and loading a network example data-set:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(network)       <span class="co"># Make sure that network is loaded</span>
+<span class="co"># help(&quot;network-package&quot;) to get started.</span>
+<span class="kw">data</span>(<span class="dt">package=</span><span class="st">&quot;network&quot;</span>) <span class="co"># List available datasets in network</span>
+
+<span class="kw">data</span>(flo)      <span class="co"># Load a built-in data set; see ?flo for more</span>
+flo          <span class="co"># Examine the flo adjacency matrix</span></code></pre></div>
+
+<div class="example">
+<span id="exm:unnamed-chunk-23" class="example"><strong>Example 2.5  </strong></span>Common network file types are that of the tables (.txt or .csv), Pajek network format (<a href="http://vlado.fmf.uni-lj.si/pub/networks/pajek/" class="uri">http://vlado.fmf.uni-lj.si/pub/networks/pajek/</a>, UCINET, etc.
+</div>
+<p></p>
+<p>First find the files “flo.paj” and “floadj.txt” that come within the network package:</p>
+<p>First we will attempt to bring in a .txt file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> flo.paj.location &lt;-<span class="st">&quot;http://vlado.fmf.uni-lj.si/pub/networks/data/GD/gd98/A98.net&quot;</span></code></pre></div>
+<p>Try reading in a Pajek file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">flopaj &lt;-<span class="st"> </span><span class="kw">read.paj</span>(flo.paj.location)</code></pre></div>
+<p>Write to table</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.table</span>(flopaj[,],<span class="dt">file=</span><span class="st">&quot;data/floadj.txt&quot;</span>)
+floadj.txt.location &lt;-<span class="st">&quot;data/floadj.txt&quot;</span></code></pre></div>
+<p>Then read them into adjacency matrix form:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> floadj &lt;-<span class="st"> </span><span class="kw">read.table</span>(floadj.txt.location,<span class="dt">header=</span><span class="ot">TRUE</span>)
+ floadj  </code></pre></div>
+<p>Some other common commands and calls for network class types:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(flopaj)    <span class="co"># This is a project file, with networks and other data</span>
+<span class="kw">names</span>(flopaj$networks)  <span class="co"># See which networks are in the file</span>
+
+nflo2 &lt;-<span class="st"> </span>flopaj$networks[[<span class="dv">1</span>]]   <span class="co"># Extract the marriage data</span>
+nflo2       <span class="co"># Examine the network object</span></code></pre></div>
+<p>Load “native” R data file( note, may need to change directory).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;data/nmlec1.Rdata&quot;</span>)         <span class="co"># Load example data</span>
+mids_1993            <span class="co"># Examine one of the imported objects</span></code></pre></div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.6  </strong></span> Other useful R commands in the network package. As always one can delve deeper into these functions via R’s help manuals (either <em>?</em> or <em>help()</em> ).</p>
+One of the first things we should look at is network objects, here is a quick example of how to create a network object and pull out some basic network properties.
+</div>
+<p></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(flo)
+nflo &lt;-<span class="st"> </span><span class="kw">network</span>(flo, <span class="dt">directed=</span><span class="ot">FALSE</span>)     
+nflo   <span class="co"># Get a quick description of the data</span>
+<span class="kw">summary</span>(nflo)   <span class="co"># Get an overall summary</span>
+<span class="kw">print</span>(nflo)    <span class="co"># Simple print method</span>
+<span class="kw">network.dyadcount</span>(nflo)   <span class="co"># How many dyads in nflo?</span>
+<span class="kw">network.edgecount</span>(nflo)     <span class="co"># How many edges are present?</span>
+<span class="kw">network.size</span>(nflo)   <span class="co"># How large is the network?</span>
+<span class="kw">as.sociomatrix</span>(nflo)   <span class="co"># Show it as a sociomatrix</span>
+nflo[,]   <span class="co"># Another way to do it</span></code></pre></div>
+<p>An example plot generated by the <em>plot.network()</em> command. The plot on the left is the default Fruchterman and Reingold’s force-directed placement algorithm, where the plot on the right is a circle output. More layouts and information can be found with <em>gplot</em> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+ <span class="kw">plot</span>(nflo,<span class="dt">displaylabels=</span>T,<span class="dt">boxed.labels=</span>F) 
+ <span class="kw">plot</span>(nflo,<span class="dt">displaylabels=</span>T,<span class="dt">mode=</span><span class="st">&quot;circle&quot;</span>, <span class="dt">boxed.labels=</span>F) </code></pre></div>
+<p><img src="IntroToNetworks_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>```</p>
+<p>Generating an empty network can be useful for a number of things.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="co"># Create an empty graph with 5 vertices</span>
+nempty &lt;-<span class="st"> </span><span class="kw">network.initialize</span>(<span class="dv">5</span>) 
+nempty   <span class="co"># Compare with nflo  </span></code></pre></div>
+<p>Now, we can look at some basic network properties such as edges.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw">network.initialize</span>(<span class="dv">5</span>)  <span class="co"># Create an empty graph</span>
+ g[<span class="dv">1</span>,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># Add an edge from 1 to 2</span>
+ g[<span class="dv">2</span>,] &lt;-<span class="st"> </span><span class="dv">1</span>   <span class="co"># Add edges from 2 to everyone else</span>
+ m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow=</span><span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">5</span>)   
+ m[<span class="dv">3</span>,<span class="dv">4</span>:<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># Add entries from 3 to 4 and 5</span>
+ g[m&gt;<span class="dv">0</span>] &lt;-<span class="st"> </span><span class="dv">1</span>  <span class="co"># Add more entries</span>
+ g[,]</code></pre></div>
+<p>Some more useful R tricks with adjancy matrices.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Delete edges</span>
+ g[<span class="dv">3</span>,<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">0</span>   <span class="co"># Remove the edge from 3 to 5</span>
+ g[,] &lt;-<span class="st"> </span><span class="dv">0</span>    <span class="co"># Remove all edges</span>
+ <span class="co">#Testing adjacency</span>
+ nflo[<span class="dv">9</span>,<span class="dv">3</span>]    <span class="co"># Medici to Barbadori?</span>
+ nflo[<span class="dv">9</span>,]       <span class="co"># Entire Medici row</span>
+ nflo[<span class="dv">1</span>:<span class="dv">4</span>,<span class="dv">5</span>:<span class="dv">8</span>]      <span class="co"># Subsets are possible</span>
+ nflo[-<span class="dv">9</span>,-<span class="dv">9</span>]<span class="co"># Negative numbers _exclude_ nodes</span>
+ m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">16</span>^<span class="dv">2</span>, <span class="dt">nrow=</span><span class="dv">16</span>, <span class="dt">ncol=</span><span class="dv">16</span>)  
+ nflo %e%<span class="st"> &quot;boo&quot;</span> &lt;-<span class="st"> </span>m  <span class="co"># Value the marriage ties</span>
+
+ <span class="co">#Retrieving edge values</span>
+<span class="kw">list.edge.attributes</span>(nflo)  <span class="co"># See what&#39;s available</span>
+nflo %e%<span class="st"> &quot;boo&quot;</span>   <span class="co"># Use the %e% operator</span>
+<span class="kw">as.sociomatrix</span>(nflo,<span class="dt">attrname=</span><span class="st">&quot;boo&quot;</span>) </code></pre></div>
+<p>Now, we can look at vertex attributes (these include things like node level covariates).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Add some attributes</span>
+ nflo %v%<span class="st"> &quot;woo&quot;</span> &lt;-<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">16</span>]   
+ nflo %n%<span class="st"> &quot;zoo&quot;</span> &lt;-<span class="st"> &quot;R is TanFastic!&quot;</span>   
+
+ <span class="co">#Listing attributes</span>
+ <span class="kw">list.vertex.attributes</span>(nflo)   <span class="co"># List all vertex attributes</span>
+ <span class="kw">list.network.attributes</span>(nflo)  <span class="co"># List all network attributes</span>
+ <span class="co">#Retrieving attributes</span>
+ nflo %v%<span class="st"> &quot;woo&quot;</span>    <span class="co"># Retrieve the vertex attribute</span>
+ nflo %n%<span class="st"> &quot;zoo&quot;</span>   <span class="co"># Retrieve the network attribute</span>
+<span class="co"># ?attribute.methods</span></code></pre></div>
+<p>```</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-butts08">
+<p>Butts, Carter T. 2008. “Social Network Analysis: A Methodological Introduction.” <em>Asian Journal of Social Psychology</em> 11: 13–41.</p>
+</div>
+<div id="ref-wegner95">
+<p>Wegner, D.M. 1995. “A Computer Network Model of Human Transactive Memory.” <em>Social Cognition</em> 13 (3): 313–39.</p>
+</div>
+<div id="ref-carley97">
+<p>Carley, Kathleen M. 1997. “Extracting Team Mental Models Through Textual Analysis.” <em>Journal of Organizational Behavior</em> 18: 533–38.</p>
+</div>
+<div id="ref-wimmer06">
+<p>Wimmer, A., and B. Min. 2006. “Rom Empire to Nation-State: Explaining Wars in the Modern World,” <em>American Sociological Review</em> 71 (6): 867–97.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="networkvizualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Networks.Rmd",
+"text": "Edit"
+},
+"download": ["IntroToNetworks.pdf", "IntroToNetworks.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
